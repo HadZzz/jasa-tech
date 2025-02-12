@@ -27,6 +27,9 @@ export default function Footer() {
               <Link href="https://linkedin.com" className="hover:text-primary transition-colors">
                 <Linkedin className="w-5 h-5" />
               </Link>
+              <Link href="https://wa.me/6285876120167" className="hover:text-primary transition-colors">
+                <Phone className="w-5 h-5" />
+              </Link>
             </div>
           </div>
 

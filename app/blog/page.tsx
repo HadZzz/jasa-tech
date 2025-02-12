@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAllPosts } from '@/lib/mdx';
 import { BlogPost } from '@/lib/types';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // Client Component for rendering
 export default function BlogPage() {

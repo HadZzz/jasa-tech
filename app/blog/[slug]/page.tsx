@@ -1,5 +1,20 @@
 import { getPostBySlug, getAllPosts } from '@/lib/mdx';
 import BlogPostContent from './BlogPostContent';
+import { Metadata } from 'next';
+
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const post = await getPostBySlug(params.slug);
+  return {
+    title: post.meta.title,
+    description: post.meta.description,
+  };
+}
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -8,7 +23,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({ params }: PageProps) {
   const post = await getPostBySlug(params.slug);
   return <BlogPostContent post={post} />;
 }

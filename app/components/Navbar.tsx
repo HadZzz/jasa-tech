@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -26,8 +27,14 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold">
-            Simbah Digital
+          <Link href="/" className="relative w-40 h-12">
+            <Image
+              src="/logo.jpeg"
+              alt="Simbah Digital"
+              fill
+              className="object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Menu */}

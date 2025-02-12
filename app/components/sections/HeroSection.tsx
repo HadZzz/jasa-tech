@@ -4,35 +4,35 @@ import Image from 'next/image';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary/5 to-background pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary/5 to-background pt-20">
       <div className="container px-4 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60 mb-6">
-              Transformasi Digital untuk Bisnis Anda
+              Jasa Pembuatan Website Profesional di Sukoharjo
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Kami membantu bisnis Anda berkembang dengan solusi digital modern menggunakan teknologi terkini seperti Next.js, Laravel, React Native, dan Flutter.
+              Butuh website untuk bisnis Anda di Sukoharjo? Kami adalah jasa pembuatan website terpercaya di Sukoharjo yang telah membantu 50+ bisnis lokal dengan solusi digital modern menggunakan teknologi Next.js, Laravel, React Native, dan Flutter.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="px-8 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition">
+              <a href="#contact" className="px-8 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition text-center">
                 Konsultasi Gratis
-              </button>
-              <button className="px-8 py-3 rounded-full border border-primary/20 hover:bg-primary/5 transition">
+              </a>
+              <a href="#portfolio" className="px-8 py-3 rounded-full border border-primary/20 hover:bg-primary/5 transition text-center">
                 Lihat Portfolio
-              </button>
+              </a>
             </div>
             
             {/* Stats */}
             <div className="mt-12 grid grid-cols-3 gap-8">
               <div>
                 <h3 className="text-3xl font-bold text-primary">100+</h3>
-                <p className="text-muted-foreground">Proyek Selesai</p>
+                <p className="text-muted-foreground">Website Selesai</p>
               </div>
               <div>
                 <h3 className="text-3xl font-bold text-primary">50+</h3>
-                <p className="text-muted-foreground">Klien Puas</p>
+                <p className="text-muted-foreground">Klien di Sukoharjo</p>
               </div>
               <div>
                 <h3 className="text-3xl font-bold text-primary">5+</h3>

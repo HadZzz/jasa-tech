@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -18,6 +17,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -30,6 +37,7 @@ export default function Navbar() {
           <Link 
             href="/" 
             className="text-3xl font-bold flex items-center"
+            onClick={() => scrollToSection('home')}
           >
             <span className="text-foreground">Jawa</span>
             <span className="text-purple-600 dark:text-purple-400">techno</span>
@@ -37,36 +45,36 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
+            <button
+              onClick={() => scrollToSection('home')}
               className="text-foreground/80 hover:text-primary transition-colors"
             >
               Beranda
-            </Link>
-            <Link
-              href="/services"
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
               className="text-foreground/80 hover:text-primary transition-colors"
             >
               Layanan
-            </Link>
-            <Link
-              href="/portfolio"
+            </button>
+            <button
+              onClick={() => scrollToSection('portfolio')}
               className="text-foreground/80 hover:text-primary transition-colors"
             >
               Portfolio
-            </Link>
-            <Link
-              href="/about"
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
               className="text-foreground/80 hover:text-primary transition-colors"
             >
-              Tentang Kami
-            </Link>
-            <Link
-              href="/contact"
+              Hubungi Kami
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
               className="px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
             >
               Hubungi Kami
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -86,45 +94,34 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
-              <Link
-                href="/"
+              <button
+                onClick={() => scrollToSection('home')}
                 className="text-foreground/80 hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Beranda
-              </Link>
-              <Link
-                href="/services"
+              </button>
+              <button
+                onClick={() => scrollToSection('services')}
                 className="text-foreground/80 hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Layanan
-              </Link>
-              <Link
-                href="/portfolio"
+              </button>
+              <button
+                onClick={() => scrollToSection('portfolio')}
                 className="text-foreground/80 hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Portfolio
-              </Link>
-              <Link
-                href="/about"
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
                 className="text-foreground/80 hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Tentang Kami
-              </Link>
-              <Link
-                href="/contact"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors inline-block text-center"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Hubungi Kami
-              </Link>
+              </button>
             </div>
           </div>
         )}
       </div>
     </nav>
   );
-} 
+}

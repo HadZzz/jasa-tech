@@ -2,10 +2,22 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllPosts } from '@/lib/mdx';
+import { BlogPost } from '@/lib/types';
+import { Suspense, useEffect, useState } from 'react';
 
-export default async function BlogPage() {
-  const posts = await getAllPosts();
+// Client Component for rendering
+export default function BlogPage() {
+  const [posts, setPosts] = useState<Omit<BlogPost, 'content'>[]>([]);
+
+  useEffect(() => {
+    async function loadPosts() {
+      const fetchedPosts = await getAllPosts();
+      setPosts(fetchedPosts);
+    }
+    loadPosts();
+  }, []);
 
   return (
     <section className="py-20">
@@ -24,7 +36,7 @@ export default async function BlogPage() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post: any) => (
+          {posts.map((post: Omit<BlogPost, 'content'>) => (
             <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
@@ -33,46 +45,43 @@ export default async function BlogPage() {
               transition={{ duration: 0.5 }}
               className="bg-background rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all duration-300"
             >
-              {post.image && (
+              {post.meta.image && (
                 <div className="relative h-48">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="object-cover w-full h-full"
+                  <Image
+                    src={post.meta.image}
+                    alt={post.meta.title}
+                    fill
+                    className="object-cover"
                   />
                 </div>
               )}
               <div className="p-6">
-                <div className="flex gap-2 mb-4">
-                  {post.tags?.map((tag: string) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
                 <h2 className="text-xl font-semibold mb-2">
-                  <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
-                    {post.title}
+                  <Link href={`/blog/${post.slug}`} className="hover:text-primary">
+                    {post.meta.title}
                   </Link>
                 </h2>
-                <p className="text-muted-foreground mb-4">{post.excerpt}</p>
+                <p className="text-muted-foreground mb-4">{post.meta.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    {new Date(post.date).toLocaleDateString('id-ID', {
-                      day: 'numeric',
+                  <time className="text-sm text-muted-foreground">
+                    {new Date(post.meta.date).toLocaleDateString('id-ID', {
+                      year: 'numeric',
                       month: 'long',
-                      year: 'numeric'
+                      day: 'numeric'
                     })}
-                  </span>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="text-primary hover:text-primary/80 transition-colors"
-                  >
-                    Baca Selengkapnya
-                  </Link>
+                  </time>
+                  {post.meta.tags && (
+                    <div className="flex gap-2">
+                      {post.meta.tags.map((tag: string) => (
+                        <span
+                          key={tag}
+                          className="text-xs px-2 py-1 bg-primary/10 text-primary rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.article>
@@ -81,4 +90,4 @@ export default async function BlogPage() {
       </div>
     </section>
   );
-} 
+}

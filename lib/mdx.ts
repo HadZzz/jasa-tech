@@ -1,57 +1,78 @@
-import fs from 'fs'
-import path from 'path'
+'use server';
+
+import { readFileSync, readdirSync } from 'node:fs'
+import { join } from 'node:path'
 import matter from 'gray-matter'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypePrettyCode from 'rehype-pretty-code'
+import React from 'react'
 
-const postsDirectory = path.join(process.cwd(), 'content/blog')
+const postsDirectory = join(process.cwd(), 'content/blog')
 
-export async function getPostBySlug(slug: string) {
+interface BlogPostMetadata {
+  title: string;
+  date: string;
+  image?: string;
+  tags?: string[];
+  description?: string;
+}
+
+interface BlogPost {
+  meta: BlogPostMetadata;
+  content: React.ReactNode;
+  slug: string;
+}
+
+export async function getPostBySlug(slug: string): Promise<BlogPost> {
   const realSlug = slug.replace(/\.mdx$/, '')
-  const filePath = path.join(postsDirectory, `${realSlug}.mdx`)
-  const fileContents = fs.readFileSync(filePath, 'utf8')
+  const filePath = join(postsDirectory, `${realSlug}.mdx`)
+  const fileContents = readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContents)
   
-  const mdxSource = await compileMDX({
+  const result = await compileMDX({
     source: content,
-    options: {
+    options: { 
       parseFrontmatter: true,
       mdxOptions: {
-        rehypePlugins: [
-          rehypeSlug,
-          [rehypeAutolinkHeadings, { behavior: 'wrap' }],
-          [rehypePrettyCode, { theme: 'github-dark' }],
-        ],
-      },
-    },
+        rehypePlugins: [rehypeSlug]
+      }
+    }
   })
 
   return {
     meta: {
-      ...data,
-      slug: realSlug,
+      title: data.title,
+      date: data.date,
+      image: data.image,
+      tags: data.tags,
+      description: data.description,
     },
-    content: mdxSource,
+    content: result.content,
+    slug: realSlug,
   }
 }
 
-export function getAllPosts() {
-  const slugs = fs.readdirSync(postsDirectory)
+export async function getAllPosts(): Promise<Omit<BlogPost, 'content'>[]> {
+  const slugs = readdirSync(postsDirectory)
   const posts = slugs
     .map((slug) => {
       const realSlug = slug.replace(/\.mdx$/, '')
-      const filePath = path.join(postsDirectory, slug)
-      const fileContents = fs.readFileSync(filePath, 'utf8')
+      const filePath = join(postsDirectory, slug)
+      const fileContents = readFileSync(filePath, 'utf8')
       const { data } = matter(fileContents)
       
       return {
-        ...data,
+        meta: {
+          title: data.title,
+          date: data.date,
+          image: data.image,
+          tags: data.tags,
+          description: data.description,
+        },
         slug: realSlug,
       }
     })
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    .sort((post1, post2) => (post1.meta.date > post2.meta.date ? -1 : 1))
 
   return posts
-} 
+}

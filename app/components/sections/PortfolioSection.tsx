@@ -11,6 +11,7 @@ const projects = [
     title: 'E-Commerce Platform',
     category: 'E-Commerce',
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop&q=60',
+    alt: 'E-commerce platform modern - Portfolio Jasa Pembuatan Website',
     description: 'Platform e-commerce modern dengan fitur lengkap',
     technologies: ['Next.js', 'Laravel', 'MySQL'],
     link: '#'
@@ -19,6 +20,7 @@ const projects = [
     title: 'Company Profile Website',
     category: 'Company Profile',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60',
+    alt: 'Website company profile profesional - Portfolio Jasa Website',
     description: 'Website company profile dengan desain modern',
     technologies: ['React', 'TailwindCSS'],
     link: '#'
@@ -27,6 +29,7 @@ const projects = [
     title: 'Mobile App Marketplace',
     category: 'Mobile',
     image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop&q=60',
+    alt: 'Aplikasi marketplace mobile modern - Portfolio Jasa Pembuatan Aplikasi',
     description: 'Aplikasi marketplace mobile cross-platform',
     technologies: ['React Native', 'Node.js'],
     link: '#'
@@ -35,6 +38,7 @@ const projects = [
     title: 'Web Application Dashboard',
     category: 'Web',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60',
+    alt: 'Dashboard admin web aplikasi modern - Portfolio Jasa Pembuatan Website',
     description: 'Dashboard admin dengan analitik lengkap',
     technologies: ['Next.js', 'TypeScript'],
     link: '#'
@@ -43,6 +47,7 @@ const projects = [
     title: 'Flutter E-Learning App',
     category: 'Mobile',
     image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=60',
+    alt: 'Aplikasi pembelajaran online modern - Portfolio Jasa Pembuatan Aplikasi',
     description: 'Aplikasi pembelajaran online dengan Flutter',
     technologies: ['Flutter', 'Firebase'],
     link: '#'
@@ -51,6 +56,7 @@ const projects = [
     title: 'SEO Optimized Blog',
     category: 'Web',
     image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop&q=60',
+    alt: 'Blog platform SEO optimasi - Portfolio Jasa Pembuatan Website',
     description: 'Blog platform dengan optimasi SEO',
     technologies: ['Next.js', 'MDX'],
     link: '#'
@@ -65,7 +71,7 @@ export default function PortfolioSection() {
   );
 
   return (
-    <section className="py-20 bg-secondary/5">
+    <section id="portfolio" className="py-20 bg-secondary/5">
       <div className="container px-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -111,7 +117,7 @@ export default function PortfolioSection() {
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={project.alt}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />

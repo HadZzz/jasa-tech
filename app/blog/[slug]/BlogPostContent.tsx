@@ -2,17 +2,10 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { BlogPost } from '@/lib/types';
 
 interface BlogPostContentProps {
-  post: {
-    meta: {
-      title: string;
-      date: string;
-      image?: string;
-      tags?: string[];
-    };
-    content: React.ReactNode;
-  };
+  post: BlogPost;
 }
 
 export default function BlogPostContent({ post }: BlogPostContentProps) {
@@ -23,7 +16,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="prose dark:prose-invert max-w-4xl mx-auto"
+          className="prose prose-lg dark:prose-invert max-w-4xl mx-auto"
         >
           {post.meta.image && (
             <div className="relative h-[400px] -mx-6 mb-6 rounded-xl overflow-hidden">

@@ -2,13 +2,13 @@ import { getPostBySlug, getAllPosts } from '@/lib/mdx';
 import BlogPostContent from './BlogPostContent';
 import { Metadata } from 'next';
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
+interface GenerateMetadataProps {
+  params: { slug: string };
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: GenerateMetadataProps
+): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
   return {
     title: post.meta.title,
@@ -23,7 +23,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: PageProps) {
+interface BlogPostPageProps {
+  params: { slug: string };
+}
+
+export default async function BlogPost({ params }: BlogPostPageProps) {
   const post = await getPostBySlug(params.slug);
   return <BlogPostContent post={post} />;
 }

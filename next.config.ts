@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: [
+      'cdni.iconscout.com',
+      'images.unsplash.com',
+      'cdn.worldvectorlogo.com'
+    ]
+  }
 };
 
 export default nextConfig;

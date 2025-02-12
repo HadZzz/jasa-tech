@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from './components/theme/theme-provider';
-import { ModeToggle } from './components/theme/mode-toggle';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -121,9 +121,7 @@ export default function RootLayout({
             <main className="flex-grow">{children}</main>
             <Footer />
           </div>
-          <div className="fixed top-4 right-4 z-50">
-            <ModeToggle />
-          </div>
+          <WhatsAppButton />
         </ThemeProvider>
       </body>
     </html>

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
@@ -8,82 +9,183 @@ export default function HeroSection() {
       <div className="container px-4 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="text-center lg:text-left animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80 mb-6">
-              Jasa Pembuatan Website Profesional Sukoharjo 2024
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              <strong>Jawatechno</strong> adalah jasa pembuatan website terpercaya di Sukoharjo dengan pengalaman 5+ tahun. Kami telah membantu 100+ bisnis lokal dengan solusi website modern menggunakan teknologi terkini seperti Next.js dan React. Dapatkan website berkualitas dengan harga terjangkau mulai Rp 2 juta!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#kontak" className="px-8 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition text-center">
-                Konsultasi Gratis
-              </a>
-              <a href="#portfolio" className="px-8 py-3 rounded-full border border-primary/20 hover:bg-primary/5 transition text-center">
-                Lihat Portfolio
-              </a>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center lg:text-left"
+          >
+            <div className="inline-block">
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="inline-block px-4 py-1.5 mb-6 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
+              >
+                ⚡ Website Modern & SEO Friendly
+              </motion.span>
             </div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80 mb-6"
+            >
+              Jasa Pembuatan Website Profesional Sukoharjo 2024
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-lg md:text-xl text-muted-foreground mb-8"
+            >
+              <strong>Jawatechno</strong> adalah jasa pembuatan website terpercaya di Sukoharjo dengan pengalaman 5+ tahun. Kami telah membantu 100+ bisnis lokal dengan solusi website modern menggunakan teknologi terkini seperti Next.js dan React. Dapatkan website berkualitas dengan harga terjangkau mulai Rp 2 juta!
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a href="#kontak" className="group px-8 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition text-center relative overflow-hidden">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Konsultasi Gratis
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </a>
+              <a href="#portfolio" className="group px-8 py-3 rounded-full border border-primary/20 hover:bg-primary/5 transition text-center flex items-center justify-center gap-2">
+                Lihat Portfolio
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </motion.div>
             
             {/* Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-8">
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-primary">100+</h3>
-                <p className="text-sm sm:text-base text-muted-foreground">Website Selesai</p>
-              </div>
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-primary">50+</h3>
-                <p className="text-sm sm:text-base text-muted-foreground">Klien di Sukoharjo</p>
-              </div>
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-primary">5+</h3>
-                <p className="text-sm sm:text-base text-muted-foreground">Tahun Pengalaman</p>
-              </div>
-            </div>
-          </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mt-12 grid grid-cols-3 gap-4 sm:gap-8"
+            >
+              {[
+                { number: "100+", label: "Website Selesai" },
+                { number: "50+", label: "Klien di Sukoharjo" },
+                { number: "5+", label: "Tahun Pengalaman" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.7 + index * 0.1 }}
+                  className="p-4 rounded-xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors"
+                >
+                  <h3 className="text-2xl sm:text-3xl font-bold text-primary">{stat.number}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground">{stat.label}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
 
           {/* Right Content - Hero Image with Dots Pattern */}
-          <div className="relative animate-fade-in-up mt-8 lg:mt-0">
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="relative mt-8 lg:mt-0"
+          >
             {/* Dots Pattern */}
-            <div className="absolute -right-4 sm:-right-12 -top-4 sm:-top-12 w-48 sm:w-72 h-48 sm:h-72 opacity-20">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="absolute -right-4 sm:-right-12 -top-4 sm:-top-12 w-48 sm:w-72 h-48 sm:h-72"
+            >
               <div className="absolute inset-0 grid grid-cols-6 gap-2">
                 {[...Array(36)].map((_, i) => (
-                  <div key={i} className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-primary"></div>
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.8 + i * 0.01 }}
+                    className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-primary"
+                  ></motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Main Image */}
-            <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
               <Image
                 src="/images/jasa-website-sukoharjo.jpg"
                 alt="Jasa Pembuatan Website Profesional Sukoharjo - Jawatechno"
                 fill
-                className="object-cover"
+                className="object-cover hover:scale-105 transition-transform duration-700"
                 priority
               />
-            </div>
+            </motion.div>
 
             {/* Floating Elements */}
-            <div className="absolute -left-4 sm:-left-8 -bottom-4 sm:-bottom-8 p-3 sm:p-4 bg-background/90 backdrop-blur-md rounded-xl shadow-lg border border-primary/10">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="absolute -left-4 sm:-left-8 -bottom-4 sm:-bottom-8 p-3 sm:p-4 bg-background/90 backdrop-blur-md rounded-xl shadow-lg border border-primary/10 hover:border-primary/30 transition-colors"
+            >
               <div className="flex items-center gap-2 sm:gap-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-xl sm:text-2xl">⭐</span>
+                  <motion.span 
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="text-xl sm:text-2xl"
+                  >
+                    ⭐
+                  </motion.span>
                 </div>
                 <div>
                   <p className="font-semibold text-sm sm:text-base">Rating 4.9/5</p>
                   <p className="text-xs sm:text-sm text-muted-foreground">50+ Review Positif</p>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 opacity-40 md:opacity-70">
-        <div className="absolute top-1/4 -left-4 w-48 sm:w-72 h-48 sm:h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-        <div className="absolute top-1/3 -right-4 w-48 sm:w-72 h-48 sm:h-72 bg-secondary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-20 w-48 sm:w-72 h-48 sm:h-72 bg-accent/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute top-1/4 -left-4 w-48 sm:w-72 h-48 sm:h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 8, delay: 1, repeat: Infinity }}
+          className="absolute top-1/3 -right-4 w-48 sm:w-72 h-48 sm:h-72 bg-secondary/30 rounded-full mix-blend-multiply filter blur-xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 8, delay: 2, repeat: Infinity }}
+          className="absolute bottom-1/4 left-20 w-48 sm:w-72 h-48 sm:h-72 bg-accent/30 rounded-full mix-blend-multiply filter blur-xl"
+        />
       </div>
     </section>
   );

@@ -1,163 +1,260 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 
-const categories = ['Semua', 'Web', 'Mobile', 'E-Commerce', 'Company Profile'];
-
-const projects = [
+// Data portfolio
+const portfolioItems = [
   {
-    title: 'E-Commerce Platform',
-    category: 'E-Commerce',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop&q=60',
-    alt: 'E-commerce platform modern - Portfolio Jasa Pembuatan Website',
-    description: 'Platform e-commerce modern dengan fitur lengkap',
-    technologies: ['Next.js', 'Laravel', 'MySQL'],
-    link: '#'
-  },
-  {
-    title: 'Company Profile Website',
+    id: 1,
+    title: 'Website Company Profile PT. ABC',
     category: 'Company Profile',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60',
-    alt: 'Website company profile profesional - Portfolio Jasa Website',
-    description: 'Website company profile dengan desain modern',
-    technologies: ['React', 'TailwindCSS'],
-    link: '#'
+    image: '/images/portfolio/company-profile.jpg',
+    description: 'Website company profile modern untuk PT. ABC dengan fitur company profile, produk, layanan, dan form kontak.',
+    technologies: ['Next.js', 'TailwindCSS', 'Framer Motion'],
+    features: [
+      'Desain Modern & Responsif',
+      'Optimasi SEO',
+      'CMS Admin Panel',
+      'Blog & Artikel',
+      'Form Kontak Terintegrasi'
+    ],
+    client: 'PT. ABC Sukoharjo',
+    duration: '2 minggu',
+    link: 'https://example.com'
   },
   {
-    title: 'Mobile App Marketplace',
-    category: 'Mobile',
-    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop&q=60',
-    alt: 'Aplikasi marketplace mobile modern - Portfolio Jasa Pembuatan Aplikasi',
-    description: 'Aplikasi marketplace mobile cross-platform',
-    technologies: ['React Native', 'Node.js'],
-    link: '#'
+    id: 2,
+    title: 'Toko Online XYZ Shop',
+    category: 'E-Commerce',
+    image: '/images/portfolio/ecommerce.jpg',
+    description: 'Platform e-commerce lengkap dengan sistem pembayaran, manajemen produk, dan tracking order.',
+    technologies: ['Next.js', 'Redux', 'MongoDB'],
+    features: [
+      'Sistem Pembayaran Online',
+      'Manajemen Produk',
+      'Keranjang Belanja',
+      'Tracking Order',
+      'Dashboard Admin'
+    ],
+    client: 'XYZ Shop Sukoharjo',
+    duration: '1 bulan',
+    link: 'https://example.com'
   },
   {
-    title: 'Web Application Dashboard',
-    category: 'Web',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60',
-    alt: 'Dashboard admin web aplikasi modern - Portfolio Jasa Pembuatan Website',
-    description: 'Dashboard admin dengan analitik lengkap',
-    technologies: ['Next.js', 'TypeScript'],
-    link: '#'
+    id: 3,
+    title: 'Landing Page Event DEF',
+    category: 'Landing Page',
+    image: '/images/portfolio/landing-page.jpg',
+    description: 'Landing page untuk event tahunan dengan sistem registrasi dan pembayaran tiket terintegrasi.',
+    technologies: ['Next.js', 'Stripe', 'PostgreSQL'],
+    features: [
+      'Registrasi Event',
+      'Pembayaran Tiket',
+      'Countdown Timer',
+      'Gallery Event',
+      'FAQ Section'
+    ],
+    client: 'Event Organizer DEF',
+    duration: '2 minggu',
+    link: 'https://example.com'
   },
-  {
-    title: 'Flutter E-Learning App',
-    category: 'Mobile',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=60',
-    alt: 'Aplikasi pembelajaran online modern - Portfolio Jasa Pembuatan Aplikasi',
-    description: 'Aplikasi pembelajaran online dengan Flutter',
-    technologies: ['Flutter', 'Firebase'],
-    link: '#'
-  },
-  {
-    title: 'SEO Optimized Blog',
-    category: 'Web',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop&q=60',
-    alt: 'Blog platform SEO optimasi - Portfolio Jasa Pembuatan Website',
-    description: 'Blog platform dengan optimasi SEO',
-    technologies: ['Next.js', 'MDX'],
-    link: '#'
-  }
 ];
 
-export default function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState('Semua');
+interface PortfolioItemType {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  description: string;
+  technologies: string[];
+  features: string[];
+  client: string;
+  duration: string;
+  link: string;
+}
 
-  const filteredProjects = projects.filter(
-    project => activeCategory === 'Semua' || project.category === activeCategory
-  );
+export default function PortfolioSection() {
+  const [selectedItem, setSelectedItem] = useState<PortfolioItemType | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (item: PortfolioItemType) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'unset';
+  };
 
   return (
-    <section id="portfolio" className="py-20 bg-secondary/5">
+    <section id="portfolio" className="py-20 bg-background">
       <div className="container px-4 mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Portfolio Kami</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Beberapa project terbaik yang telah kami kerjakan untuk klien
-          </p>
-        </motion.div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-background hover:bg-primary/10'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold mb-4"
+          >
+            Portfolio Kami
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-muted-foreground max-w-2xl mx-auto"
+          >
+            Beberapa proyek website yang telah kami kerjakan untuk klien di Sukoharjo dan sekitarnya.
+          </motion.p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {portfolioItems.map((item, index) => (
             <motion.div
-              key={project.title}
+              key={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-background rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all duration-300"
+              transition={{ delay: index * 0.1 }}
+              className="group relative bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64">
                 <Image
-                  src={project.image}
-                  alt={project.alt}
+                  src={item.image}
+                  alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href={project.link}
-                  className="inline-flex items-center text-primary hover:text-primary/80"
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mb-3">
+                  {item.category}
+                </span>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
+                  {item.description}
+                </p>
+                <button
+                  onClick={() => openModal(item)}
+                  className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                 >
                   Lihat Detail
-                  <svg
-                    className="w-4 h-4 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Modal */}
+        <AnimatePresence>
+          {isModalOpen && selectedItem && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm"
+              onClick={closeModal}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="relative w-full max-w-4xl bg-background rounded-2xl shadow-xl overflow-hidden"
+                onClick={e => e.stopPropagation()}
+              >
+                <button
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 p-2 rounded-full bg-background/10 backdrop-blur-sm hover:bg-background/20 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+
+                <div className="grid md:grid-cols-2">
+                  <div className="relative h-64 md:h-full">
+                    <Image
+                      src={selectedItem.image}
+                      alt={selectedItem.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 overflow-y-auto max-h-[80vh]">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mb-3">
+                      {selectedItem.category}
+                    </span>
+                    <h3 className="text-2xl font-bold mb-4">{selectedItem.title}</h3>
+                    <p className="text-muted-foreground mb-6">
+                      {selectedItem.description}
+                    </p>
+
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-lg font-semibold mb-2">Teknologi</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedItem.technologies.map((tech, index) => (
+                            <span
+                              key={index}
+                              className="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-semibold mb-2">Fitur Utama</h4>
+                        <ul className="space-y-2">
+                          {selectedItem.features.map((feature, index) => (
+                            <li key={index} className="flex items-center text-sm text-muted-foreground">
+                              <svg className="w-4 h-4 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <h4 className="text-sm font-semibold mb-1">Klien</h4>
+                          <p className="text-sm text-muted-foreground">{selectedItem.client}</p>
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold mb-1">Durasi Pengerjaan</h4>
+                          <p className="text-sm text-muted-foreground">{selectedItem.duration}</p>
+                        </div>
+                      </div>
+
+                      <a
+                        href={selectedItem.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-full px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                      >
+                        Kunjungi Website
+                        <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

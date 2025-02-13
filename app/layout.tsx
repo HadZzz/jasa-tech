@@ -9,8 +9,8 @@ import WhatsAppButton from './components/WhatsAppButton';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Jasa Pembuatan Website Sukoharjo #1 | Jawatechno',
-  description: 'Jasa pembuatan website profesional di Sukoharjo dengan harga terjangkau. ✓ Gratis Konsultasi ✓ Desain Menarik ✓ SEO Friendly ✓ Support 24/7. Hubungi Sekarang!',
+  title: 'Jasa Pembuatan Website Sukoharjo 2024 ⭐ Terpercaya | Jawatechno',
+  description: '✓ Jasa pembuatan website Sukoharjo terbaik dengan 100+ klien puas. Spesialis website company profile, toko online, landing page. Gratis konsultasi, desain modern, SEO friendly, support 24/7. Harga mulai 2jt!',
   keywords: [
     'jasa pembuatan website sukoharjo',
     'jasa buat website sukoharjo',
@@ -19,14 +19,21 @@ export const metadata: Metadata = {
     'web developer sukoharjo',
     'jasa it sukoharjo',
     'pembuatan website company profile',
+    'jasa website toko online sukoharjo',
+    'website murah sukoharjo',
+    'website profesional sukoharjo',
+    'website bisnis sukoharjo',
+    'website sekolah sukoharjo',
+    'website umkm sukoharjo',
+    'website landing page sukoharjo'
   ],
   metadataBase: new URL('https://jawatechno.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Jasa Pembuatan Website Sukoharjo #1 | Jawatechno',
-    description: 'Jasa pembuatan website profesional di Sukoharjo dengan harga terjangkau. ✓ Gratis Konsultasi ✓ Desain Menarik ✓ SEO Friendly ✓ Support 24/7',
+    title: 'Jasa Pembuatan Website Sukoharjo 2024 ⭐ Terpercaya | Jawatechno',
+    description: '✓ Jasa pembuatan website Sukoharjo terbaik dengan 100+ klien puas. Spesialis website company profile, toko online, landing page. Gratis konsultasi, desain modern, SEO friendly, support 24/7',
     url: 'https://jawatechno.com',
     siteName: 'Jawatechno',
     locale: 'id_ID',
@@ -42,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jasa Pembuatan Website Sukoharjo #1 | Jawatechno',
-    description: 'Jasa pembuatan website profesional di Sukoharjo dengan harga terjangkau. ✓ Gratis Konsultasi ✓ Desain Menarik ✓ SEO Friendly',
+    title: 'Jasa Pembuatan Website Sukoharjo 2024 ⭐ Terpercaya | Jawatechno',
+    description: '✓ Jasa pembuatan website Sukoharjo terbaik dengan 100+ klien puas. Spesialis website company profile, toko online, landing page. Gratis konsultasi!',
     images: ['/og-image.jpg'],
   },
   verification: {
@@ -53,8 +60,9 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'ProfessionalService',
   name: 'Jawatechno - Jasa Pembuatan Website Sukoharjo',
+  description: 'Jasa pembuatan website profesional di Sukoharjo dengan pengalaman 5+ tahun dan 100+ website selesai. Spesialis website company profile, toko online, dan landing page.',
   image: 'https://jawatechno.com/og-image.jpg',
   '@id': 'https://jawatechno.com',
   url: 'https://jawatechno.com',
@@ -89,7 +97,42 @@ const jsonLd = {
     'https://facebook.com/jawatechno',
     'https://instagram.com/jawatechno'
   ],
-  priceRange: 'Rp2.000.000 - Rp10.000.000'
+  priceRange: 'Rp2.000.000 - Rp10.000.000',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '50'
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Layanan Website',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Website Company Profile',
+          description: 'Pembuatan website company profile profesional untuk bisnis di Sukoharjo'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Website Toko Online',
+          description: 'Pembuatan website toko online dengan fitur lengkap'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Landing Page',
+          description: 'Pembuatan landing page yang convert untuk bisnis Anda'
+        }
+      }
+    ]
+  }
 };
 
 export default function RootLayout({

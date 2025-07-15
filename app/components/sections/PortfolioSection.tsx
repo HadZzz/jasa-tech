@@ -13,7 +13,7 @@ const portfolioItems = [
     category: "Company Profile",
     image:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop&q=60",
-    // ...
+    description: "Website company profile profesional dengan desain modern dan responsive untuk meningkatkan kredibilitas bisnis."
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const portfolioItems = [
     category: "E-Commerce",
     image:
       "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&auto=format&fit=crop&q=60",
-    // ...
+    description: "Platform e-commerce lengkap dengan sistem pembayaran, manajemen produk, dan dashboard admin yang user-friendly."
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const portfolioItems = [
     category: "Landing Page",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=60",
-    // ...
+    description: "Landing page event dengan desain menarik dan call-to-action yang efektif untuk meningkatkan konversi pendaftaran."
   },
 ];
 
@@ -39,11 +39,11 @@ interface PortfolioItemType {
   category: string;
   image: string;
   description: string;
-  technologies: string[];
-  features: string[];
-  client: string;
-  duration: string;
-  link: string;
+  technologies?: string[];
+  features?: string[];
+  client?: string;
+  duration?: string;
+  link?: string;
 }
 
 export default function PortfolioSection() {

@@ -5,40 +5,46 @@ import { Code2, Smartphone, ShoppingCart, Building2, Search, Laptop } from 'luci
 
 const services = [
   {
-    icon: <Code2 className="w-10 h-10" />,
-    title: 'Web Development',
-    description: 'Modern web apps dengan Next.js dan Laravel untuk performa dan skalabilitas terbaik.',
-    technologies: ['Next.js', 'Laravel', 'React', 'TypeScript']
-  },
-  {
-    icon: <Smartphone className="w-10 h-10" />,
-    title: 'Mobile Development',
-    description: 'Aplikasi mobile cross-platform dengan React Native dan Flutter.',
-    technologies: ['React Native', 'Flutter', 'iOS', 'Android']
+    icon: <Building2 className="w-10 h-10" />,
+    title: 'Website Company Profile Sukoharjo',
+    description: 'Jasa pembuatan website company profile profesional di Sukoharjo untuk meningkatkan kredibilitas bisnis Anda. Desain modern, responsive, dan SEO friendly.',
+    technologies: ['Responsive Design', 'SEO Optimized', 'CMS Admin', 'Fast Loading'],
+    keyword: 'website company profile sukoharjo'
   },
   {
     icon: <ShoppingCart className="w-10 h-10" />,
-    title: 'E-Commerce Solutions',
-    description: 'Platform e-commerce yang powerful dengan fitur lengkap untuk bisnis online Anda.',
-    technologies: ['WooCommerce', 'Shopify', 'Custom Solution']
-  },
-  {
-    icon: <Building2 className="w-10 h-10" />,
-    title: 'Company Profile',
-    description: 'Website company profile profesional yang merepresentasikan brand Anda.',
-    technologies: ['Responsive Design', 'Modern UI/UX', 'CMS']
-  },
-  {
-    icon: <Search className="w-10 h-10" />,
-    title: 'SEO Optimization',
-    description: 'Optimasi mesin pencari untuk meningkatkan visibilitas online Anda.',
-    technologies: ['On-page SEO', 'Technical SEO', 'Content Strategy']
+    title: 'Website Toko Online Sukoharjo',
+    description: 'Pembuatan website toko online di Sukoharjo dengan fitur lengkap: payment gateway, manajemen produk, dan sistem order yang mudah digunakan.',
+    technologies: ['E-Commerce', 'Payment Gateway', 'Inventory System', 'Mobile Friendly'],
+    keyword: 'website toko online sukoharjo'
   },
   {
     icon: <Laptop className="w-10 h-10" />,
-    title: 'Custom Solutions',
-    description: 'Solusi digital custom sesuai kebutuhan spesifik bisnis Anda.',
-    technologies: ['Web Apps', 'Mobile Apps', 'Integration']
+    title: 'Landing Page Sukoharjo',
+    description: 'Jasa pembuatan landing page di Sukoharjo yang convert tinggi untuk campaign marketing dan promosi bisnis Anda.',
+    technologies: ['High Converting', 'A/B Testing', 'Analytics', 'Lead Generation'],
+    keyword: 'landing page sukoharjo'
+  },
+  {
+    icon: <Code2 className="w-10 h-10" />,
+    title: 'Website Bisnis Sukoharjo',
+    description: 'Pembuatan website bisnis profesional di Sukoharjo dengan teknologi modern Next.js dan Laravel untuk performa optimal.',
+    technologies: ['Next.js', 'Laravel', 'React', 'TypeScript'],
+    keyword: 'website bisnis sukoharjo'
+  },
+  {
+    icon: <Search className="w-10 h-10" />,
+    title: 'Website SEO Friendly Sukoharjo',
+    description: 'Jasa pembuatan website SEO friendly di Sukoharjo untuk ranking #1 di Google. Optimasi on-page dan technical SEO terbaik.',
+    technologies: ['On-page SEO', 'Technical SEO', 'Local SEO', 'Google Analytics'],
+    keyword: 'website seo sukoharjo'
+  },
+  {
+    icon: <Smartphone className="w-10 h-10" />,
+    title: 'Website Responsive Sukoharjo',
+    description: 'Pembuatan website responsive di Sukoharjo yang tampil sempurna di semua device: desktop, tablet, dan mobile.',
+    technologies: ['Mobile First', 'Cross Browser', 'Touch Friendly', 'Fast Loading'],
+    keyword: 'website responsive sukoharjo'
   }
 ];
 
@@ -53,9 +59,9 @@ export default function ServicesSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Layanan Kami</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Jasa Pembuatan Website di Sukoharjo</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Solusi digital komprehensif untuk membantu bisnis Anda berkembang di era digital
+            Layanan pembuatan website profesional di Sukoharjo dengan harga terjangkau. Spesialis website company profile, toko online, dan landing page untuk bisnis lokal Sukoharjo.
           </p>
         </motion.div>
 

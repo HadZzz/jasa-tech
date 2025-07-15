@@ -5,59 +5,53 @@ import { Check } from 'lucide-react';
 
 const plans = [
   {
-    name: 'Basic',
-    price: 'Rp 5jt',
-    description: 'Cocok untuk website sederhana',
+    name: 'Landing Page Sukoharjo',
+    price: 'Rp 200rb',
+    description: 'Paket landing page sederhana untuk promosi bisnis',
     features: [
-      'Landing Page / Company Profile',
+      '1 Halaman Landing Page',
       'Responsive Design',
-      'Basic SEO Setup',
-      '3 Halaman',
+      'Modern Design',
       'Contact Form',
-      'Free Domain .com',
-      'Free Hosting 1 Tahun',
+      'WhatsApp Button',
+      'Basic SEO Setup'
+    ],
+    highlighted: false,
+    keyword: 'landing page sukoharjo'
+  },
+  {
+    name: 'Website Company Profile Sukoharjo',
+    price: 'Rp 800rb',
+    description: 'Paket website company profile profesional untuk bisnis',
+    features: [
+      'Website Company Profile Profesional',
+      'Responsive Design (Mobile Friendly)',
+      '5 Halaman (Home, About, Service, Portfolio, Contact)',
+      'Contact Form & WhatsApp Integration',
+      'Basic SEO Setup',
+      'Google Analytics Setup',
       'Support 1 Bulan'
     ],
-    highlighted: false
+    highlighted: true,
+    keyword: 'website company profile sukoharjo'
   },
   {
-    name: 'Professional',
-    price: 'Rp 15jt',
-    description: 'Untuk bisnis yang berkembang',
+    name: 'Custom Website Sukoharjo',
+    price: 'Rp 1.5jt',
+    description: 'Paket website custom sesuai kebutuhan bisnis Anda',
     features: [
-      'Website Dinamis',
+      'Website Custom Design',
+      'Fitur Sesuai Kebutuhan',
       'CMS Admin Panel',
-      'Advanced SEO Setup',
-      '10 Halaman',
-      'Blog System',
-      'Free Domain .com',
-      'Free Hosting 1 Tahun',
-      'Support 6 Bulan',
+      'Responsive Design',
+      'SEO Optimization',
+      'WhatsApp Integration',
       'Google Analytics',
-      'Social Media Integration',
-      'Live Chat Integration'
+      'Support 3 Bulan',
+      'Konsultasi Unlimited'
     ],
-    highlighted: true
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    description: 'Solusi lengkap untuk enterprise',
-    features: [
-      'Custom Web Application',
-      'E-Commerce Integration',
-      'Full SEO Package',
-      'Unlimited Pages',
-      'Custom Features',
-      'Premium Domain',
-      'Premium Hosting',
-      'Priority Support 24/7',
-      'Advanced Analytics',
-      'API Integration',
-      'Payment Gateway',
-      'Custom Security'
-    ],
-    highlighted: false
+    highlighted: false,
+    keyword: 'custom website sukoharjo'
   }
 ];
 
@@ -72,9 +66,9 @@ export default function PricingSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Pilihan Paket</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Harga Pembuatan Website di Sukoharjo</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Pilih paket yang sesuai dengan kebutuhan bisnis Anda
+            Paket jasa pembuatan website di Sukoharjo dengan harga terjangkau mulai Rp 200 ribu. Konsultasi gratis untuk semua paket website sesuai kebutuhan bisnis Anda.
           </p>
         </motion.div>
 
@@ -135,11 +129,11 @@ export default function PricingSection() {
           className="text-center mt-16"
         >
           <p className="text-muted-foreground mb-4">
-            Butuh solusi custom? Konsultasikan kebutuhan Anda dengan tim kami
+            Butuh paket website custom untuk bisnis di Sukoharjo? Konsultasikan kebutuhan pembuatan website Anda dengan tim ahli kami secara GRATIS!
           </p>
-          <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition">
-            Hubungi Kami
-          </button>
+          <a href="#kontak" className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition">
+            Konsultasi Gratis Sekarang
+          </a>
         </motion.div>
       </div>
     </section>

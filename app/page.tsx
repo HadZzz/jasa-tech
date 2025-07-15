@@ -1,10 +1,12 @@
 import HeroSection from './components/sections/HeroSection';
 import ServicesSection from './components/sections/ServicesSection';
+import ServiceDetailSection from './components/sections/ServiceDetailSection';
 import WhyChooseUsSection from './components/sections/WhyChooseUsSection';
+import PricingSection from './components/sections/PricingSection';
 import PortfolioSection from './components/sections/PortfolioSection';
 import ProcessSection from './components/sections/ProcessSection';
-import PricingSection from './components/sections/PricingSection';
 import TestimonialsSection from './components/sections/TestimonialsSection';
+import LocalSEOSection from './components/sections/LocalSEOSection';
 import ContactSection from './components/sections/ContactSection';
 
 export default function Home() {
@@ -12,11 +14,13 @@ export default function Home() {
     <main>
       <HeroSection />
       <ServicesSection />
+      <ServiceDetailSection />
       <WhyChooseUsSection />
+      <PricingSection />
       <PortfolioSection />
       <ProcessSection />
-      <PricingSection />
       <TestimonialsSection />
+      <LocalSEOSection />
       <ContactSection />
     </main>
   );

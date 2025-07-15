@@ -157,8 +157,7 @@ export default function ContactSection() {
                 <Mail className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-muted-foreground">info@simbahdigital.com</p>
-                  <p className="text-muted-foreground">support@simbahdigital.com</p>
+                  <p className="text-muted-foreground">hadzipamuji5@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -168,8 +167,7 @@ export default function ContactSection() {
                 <Phone className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold mb-2">Telepon</h3>
-                  <p className="text-muted-foreground">+62 812-3456-7890</p>
-                  <p className="text-muted-foreground">+62 821-9876-5432</p>
+                  <p className="text-muted-foreground">+62 858-7612-0167</p>
                 </div>
               </div>
             </div>
@@ -180,8 +178,8 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-semibold mb-2">Alamat</h3>
                   <p className="text-muted-foreground">
-                    Jl. Teknologi No. 123<br />
-                    Jakarta Selatan, 12345<br />
+                    Karangasem, Bulu<br />
+                    Sukoharjo, Jawa Tengah<br />
                     Indonesia
                   </p>
                 </div>

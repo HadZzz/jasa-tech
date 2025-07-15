@@ -1,65 +1,35 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 
 // Data portfolio
 const portfolioItems = [
   {
     id: 1,
-    title: 'Website Company Profile PT. ABC',
-    category: 'Company Profile',
-    image: '/images/portfolio/company-profile.jpg',
-    description: 'Website company profile modern untuk PT. ABC dengan fitur company profile, produk, layanan, dan form kontak.',
-    technologies: ['Next.js', 'TailwindCSS', 'Framer Motion'],
-    features: [
-      'Desain Modern & Responsif',
-      'Optimasi SEO',
-      'CMS Admin Panel',
-      'Blog & Artikel',
-      'Form Kontak Terintegrasi'
-    ],
-    client: 'PT. ABC Sukoharjo',
-    duration: '2 minggu',
-    link: 'https://example.com'
+    title: "Website Company Profile PT. ABC",
+    category: "Company Profile",
+    image:
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop&q=60",
+    // ...
   },
   {
     id: 2,
-    title: 'Toko Online XYZ Shop',
-    category: 'E-Commerce',
-    image: '/images/portfolio/ecommerce.jpg',
-    description: 'Platform e-commerce lengkap dengan sistem pembayaran, manajemen produk, dan tracking order.',
-    technologies: ['Next.js', 'Redux', 'MongoDB'],
-    features: [
-      'Sistem Pembayaran Online',
-      'Manajemen Produk',
-      'Keranjang Belanja',
-      'Tracking Order',
-      'Dashboard Admin'
-    ],
-    client: 'XYZ Shop Sukoharjo',
-    duration: '1 bulan',
-    link: 'https://example.com'
+    title: "Toko Online XYZ Shop",
+    category: "E-Commerce",
+    image:
+      "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&auto=format&fit=crop&q=60",
+    // ...
   },
   {
     id: 3,
-    title: 'Landing Page Event DEF',
-    category: 'Landing Page',
-    image: '/images/portfolio/landing-page.jpg',
-    description: 'Landing page untuk event tahunan dengan sistem registrasi dan pembayaran tiket terintegrasi.',
-    technologies: ['Next.js', 'Stripe', 'PostgreSQL'],
-    features: [
-      'Registrasi Event',
-      'Pembayaran Tiket',
-      'Countdown Timer',
-      'Gallery Event',
-      'FAQ Section'
-    ],
-    client: 'Event Organizer DEF',
-    duration: '2 minggu',
-    link: 'https://example.com'
+    title: "Landing Page Event DEF",
+    category: "Landing Page",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=60",
+    // ...
   },
 ];
 
@@ -77,25 +47,27 @@ interface PortfolioItemType {
 }
 
 export default function PortfolioSection() {
-  const [selectedItem, setSelectedItem] = useState<PortfolioItemType | null>(null);
+  const [selectedItem, setSelectedItem] = useState<PortfolioItemType | null>(
+    null,
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = (item: PortfolioItemType) => {
     setSelectedItem(item);
     setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   return (
     <section id="portfolio" className="py-20 bg-background">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -103,14 +75,15 @@ export default function PortfolioSection() {
           >
             Portfolio Kami
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            Beberapa proyek website yang telah kami kerjakan untuk klien di Sukoharjo dan sekitarnya.
+            Beberapa proyek website yang telah kami kerjakan untuk klien di
+            Sukoharjo dan sekitarnya.
           </motion.p>
         </div>
 
@@ -146,8 +119,18 @@ export default function PortfolioSection() {
                   className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                 >
                   Lihat Detail
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
               </div>
@@ -170,7 +153,7 @@ export default function PortfolioSection() {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 className="relative w-full max-w-4xl bg-background rounded-2xl shadow-xl overflow-hidden"
-                onClick={e => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={closeModal}
@@ -192,14 +175,18 @@ export default function PortfolioSection() {
                     <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mb-3">
                       {selectedItem.category}
                     </span>
-                    <h3 className="text-2xl font-bold mb-4">{selectedItem.title}</h3>
+                    <h3 className="text-2xl font-bold mb-4">
+                      {selectedItem.title}
+                    </h3>
                     <p className="text-muted-foreground mb-6">
                       {selectedItem.description}
                     </p>
 
                     <div className="space-y-6">
                       <div>
-                        <h4 className="text-lg font-semibold mb-2">Teknologi</h4>
+                        <h4 className="text-lg font-semibold mb-2">
+                          Teknologi
+                        </h4>
                         <div className="flex flex-wrap gap-2">
                           {selectedItem.technologies.map((tech, index) => (
                             <span
@@ -213,12 +200,27 @@ export default function PortfolioSection() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-semibold mb-2">Fitur Utama</h4>
+                        <h4 className="text-lg font-semibold mb-2">
+                          Fitur Utama
+                        </h4>
                         <ul className="space-y-2">
                           {selectedItem.features.map((feature, index) => (
-                            <li key={index} className="flex items-center text-sm text-muted-foreground">
-                              <svg className="w-4 h-4 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            <li
+                              key={index}
+                              className="flex items-center text-sm text-muted-foreground"
+                            >
+                              <svg
+                                className="w-4 h-4 mr-2 text-primary"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M5 13l4 4L19 7"
+                                />
                               </svg>
                               {feature}
                             </li>
@@ -229,11 +231,17 @@ export default function PortfolioSection() {
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <h4 className="text-sm font-semibold mb-1">Klien</h4>
-                          <p className="text-sm text-muted-foreground">{selectedItem.client}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {selectedItem.client}
+                          </p>
                         </div>
                         <div>
-                          <h4 className="text-sm font-semibold mb-1">Durasi Pengerjaan</h4>
-                          <p className="text-sm text-muted-foreground">{selectedItem.duration}</p>
+                          <h4 className="text-sm font-semibold mb-1">
+                            Durasi Pengerjaan
+                          </h4>
+                          <p className="text-sm text-muted-foreground">
+                            {selectedItem.duration}
+                          </p>
                         </div>
                       </div>
 
@@ -244,8 +252,18 @@ export default function PortfolioSection() {
                         className="inline-flex items-center justify-center w-full px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                       >
                         Kunjungi Website
-                        <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
                         </svg>
                       </a>
                     </div>
@@ -258,4 +276,4 @@ export default function PortfolioSection() {
       </div>
     </section>
   );
-} 
+}

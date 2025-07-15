@@ -188,7 +188,7 @@ export default function PortfolioSection() {
                           Teknologi
                         </h4>
                         <div className="flex flex-wrap gap-2">
-                          {selectedItem.technologies.map((tech, index) => (
+                          {selectedItem.technologies?.map((tech, index) => (
                             <span
                               key={index}
                               className="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary"
@@ -204,7 +204,7 @@ export default function PortfolioSection() {
                           Fitur Utama
                         </h4>
                         <ul className="space-y-2">
-                          {selectedItem.features.map((feature, index) => (
+                          {selectedItem.features?.map((feature, index) => (
                             <li
                               key={index}
                               className="flex items-center text-sm text-muted-foreground"

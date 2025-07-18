@@ -34,12 +34,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    // Blog posts
+    // Blog posts - High priority SEO content
+    {
+      url: `${baseUrl}/blog/harga-pembuatan-website-sukoharjo`,
+      lastModified: new Date('2024-12-19'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/jasa-pembuatan-website-umkm-sukoharjo`,
+      lastModified: new Date('2024-12-19'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/web-developer-sukoharjo-terpercaya`,
+      lastModified: new Date('2024-12-19'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/kompetitor-jasa-website-sukoharjo`,
+      lastModified: new Date('2024-12-19'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/cara-memilih-jasa-website-terpercaya-sukoharjo`,
+      lastModified: new Date('2024-12-19'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/ranking-1-google-jasa-website-sukoharjo`,
+      lastModified: new Date('2024-12-19'),
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
     {
       url: `${baseUrl}/blog/jasa-pembuatan-website-sukoharjo`,
       lastModified: new Date('2024-02-15'),
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/blog/tips-memilih-jasa-pembuatan-website`,

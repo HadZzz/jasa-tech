@@ -34,7 +34,7 @@ export default function HeroSection() {
               transition={{ delay: 0.3 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80 mb-6"
             >
-              Jasa Pembuatan Website di Sukoharjo Terpercaya #1
+              Jasa Pembuatan Website Sukoharjo Murah & Terpercaya
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -43,10 +43,9 @@ export default function HeroSection() {
               className="text-lg md:text-xl text-muted-foreground mb-8"
             >
               <strong>Jawatechno</strong> adalah jasa pembuatan website di Sukoharjo
-              terpercaya dengan pengalaman 5+ tahun. Kami telah
-              membantu 100+ bisnis lokal dengan solusi pembuatan website modern
-              menggunakan teknologi terkini seperti Next.js dan React. Dapatkan
-              website berkualitas dengan harga terjangkau mulai Rp 200 ribu!
+              terpercaya dengan harga mulai <strong>200rb</strong>. Spesialis website company profile, 
+              toko online, dan landing page untuk bisnis UMKM. Melayani Sukoharjo, Solo, Kartasura 
+              dengan teknologi modern Next.js. <strong>Gratis konsultasi & garansi revisi!</strong>
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -55,11 +54,12 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <a
-                href="#kontak"
+                href="#contact"
                 className="group px-8 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition text-center relative overflow-hidden"
+                title="Konsultasi Gratis Jasa Pembuatan Website Sukoharjo"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Konsultasi Gratis
+                  Konsultasi Gratis Website
                   <svg
                     className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -76,10 +76,11 @@ export default function HeroSection() {
                 </span>
               </a>
               <a
-                href="#portfolio"
+                href="#services"
                 className="group px-8 py-3 rounded-full border border-primary/20 hover:bg-primary/5 transition text-center flex items-center justify-center gap-2"
+                title="Layanan Jasa Pembuatan Website Sukoharjo"
               >
-                Lihat Portfolio
+                Layanan Website Kami
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                   fill="none"

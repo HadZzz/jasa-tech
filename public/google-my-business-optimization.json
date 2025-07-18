@@ -1,0 +1,98 @@
+{
+  "business_name": "Jawatechno - Jasa Pembuatan Website Sukoharjo",
+  "category_primary": "Web Designer",
+  "categories_secondary": [
+    "Software Company",
+    "Marketing Agency", 
+    "Computer Service",
+    "Website Designer"
+  ],
+  "description": "Jasa pembuatan website profesional di Sukoharjo dengan harga mulai 200rb. Spesialis website company profile, toko online, landing page untuk UMKM dan bisnis. Melayani Sukoharjo, Solo, Kartasura dengan teknologi modern Next.js dan Laravel. Gratis konsultasi, SEO friendly, garansi revisi. Pengalaman 5+ tahun dengan 100+ website selesai.",
+  "services": [
+    "Jasa Pembuatan Website Company Profile Sukoharjo",
+    "Jasa Pembuatan Website Toko Online Sukoharjo", 
+    "Jasa Pembuatan Landing Page Sukoharjo",
+    "Jasa Pembuatan Website UMKM Sukoharjo",
+    "Web Developer Sukoharjo",
+    "Web Design Sukoharjo",
+    "SEO Website Sukoharjo",
+    "Maintenance Website Sukoharjo"
+  ],
+  "products": [
+    {
+      "name": "Website Company Profile",
+      "description": "Website company profile profesional untuk bisnis di Sukoharjo mulai 200rb",
+      "price": "Rp 200.000 - Rp 500.000"
+    },
+    {
+      "name": "Website Toko Online", 
+      "description": "Website e-commerce lengkap dengan payment gateway untuk UMKM Sukoharjo",
+      "price": "Rp 500.000 - Rp 1.500.000"
+    },
+    {
+      "name": "Landing Page",
+      "description": "Landing page yang convert tinggi untuk campaign marketing bisnis",
+      "price": "Rp 300.000 - Rp 800.000"
+    }
+  ],
+  "attributes": [
+    "Identifies as women-owned",
+    "LGBTQ+ friendly", 
+    "Wheelchair accessible",
+    "Free Wi-Fi",
+    "Accepts credit cards",
+    "Accepts debit cards",
+    "Accepts mobile payments"
+  ],
+  "hours": {
+    "monday": "09:00-17:00",
+    "tuesday": "09:00-17:00", 
+    "wednesday": "09:00-17:00",
+    "thursday": "09:00-17:00",
+    "friday": "09:00-17:00",
+    "saturday": "09:00-17:00",
+    "sunday": "Closed"
+  },
+  "contact": {
+    "phone": "+6285876120167",
+    "website": "https://jawatechno.com",
+    "email": "hadzipamuji5@gmail.com"
+  },
+  "address": {
+    "street": "Karangasem, Bulu",
+    "city": "Sukoharjo", 
+    "state": "Jawa Tengah",
+    "postal_code": "57512",
+    "country": "Indonesia"
+  },
+  "keywords_optimization": [
+    "jasa pembuatan website sukoharjo",
+    "web developer sukoharjo",
+    "website murah sukoharjo", 
+    "jasa website sukoharjo",
+    "pembuatan website company profile sukoharjo",
+    "website toko online sukoharjo",
+    "jasa pembuatan website umkm sukoharjo"
+  ],
+  "posts_strategy": [
+    {
+      "type": "Offer",
+      "title": "Promo Website Company Profile Sukoharjo - Mulai 200rb!",
+      "description": "Dapatkan website company profile profesional untuk bisnis Anda di Sukoharjo dengan harga spesial mulai 200rb. Include domain, hosting, SEO optimization!",
+      "cta": "Konsultasi Gratis",
+      "frequency": "Weekly"
+    },
+    {
+      "type": "Update",
+      "title": "Tips Digital Marketing untuk UMKM Sukoharjo",
+      "description": "Bagaimana UMKM di Sukoharjo bisa meningkatkan penjualan dengan website dan digital marketing yang tepat.",
+      "frequency": "Bi-weekly"
+    },
+    {
+      "type": "Event",
+      "title": "Workshop Gratis: Website untuk UMKM Sukoharjo",
+      "description": "Join workshop gratis tentang pentingnya website untuk UMKM di Sukoharjo. Daftar sekarang!",
+      "frequency": "Monthly"
+    }
+  ]
+}

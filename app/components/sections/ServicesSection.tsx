@@ -6,45 +6,45 @@ import { Code2, Smartphone, ShoppingCart, Building2, Search, Laptop } from 'luci
 const services = [
   {
     icon: <Building2 className="w-10 h-10" />,
-    title: 'Website Company Profile Sukoharjo',
-    description: 'Jasa pembuatan website company profile profesional di Sukoharjo untuk meningkatkan kredibilitas bisnis Anda. Desain modern, responsive, dan SEO friendly.',
-    technologies: ['Responsive Design', 'SEO Optimized', 'CMS Admin', 'Fast Loading'],
-    keyword: 'website company profile sukoharjo'
+    title: 'Jasa Pembuatan Website Company Profile Sukoharjo',
+    description: 'Jasa pembuatan website company profile profesional di Sukoharjo mulai 200rb. Desain modern, responsive, SEO friendly untuk meningkatkan kredibilitas bisnis UMKM Anda.',
+    technologies: ['Mulai 200rb', 'SEO Optimized', 'CMS Admin', 'Garansi Revisi'],
+    keyword: 'jasa pembuatan website company profile sukoharjo'
   },
   {
     icon: <ShoppingCart className="w-10 h-10" />,
-    title: 'Website Toko Online Sukoharjo',
-    description: 'Pembuatan website toko online di Sukoharjo dengan fitur lengkap: payment gateway, manajemen produk, dan sistem order yang mudah digunakan.',
-    technologies: ['E-Commerce', 'Payment Gateway', 'Inventory System', 'Mobile Friendly'],
-    keyword: 'website toko online sukoharjo'
+    title: 'Jasa Pembuatan Website Toko Online Sukoharjo',
+    description: 'Pembuatan website toko online di Sukoharjo dengan fitur lengkap: payment gateway, manajemen produk, sistem order. Cocok untuk UMKM yang ingin jualan online.',
+    technologies: ['E-Commerce', 'Payment Gateway', 'Inventory System', 'WhatsApp Order'],
+    keyword: 'jasa pembuatan website toko online sukoharjo'
   },
   {
     icon: <Laptop className="w-10 h-10" />,
-    title: 'Landing Page Sukoharjo',
-    description: 'Jasa pembuatan landing page di Sukoharjo yang convert tinggi untuk campaign marketing dan promosi bisnis Anda.',
-    technologies: ['High Converting', 'A/B Testing', 'Analytics', 'Lead Generation'],
-    keyword: 'landing page sukoharjo'
+    title: 'Jasa Pembuatan Landing Page Sukoharjo',
+    description: 'Jasa pembuatan landing page di Sukoharjo yang convert tinggi untuk campaign marketing dan promosi bisnis. Harga terjangkau dengan hasil maksimal.',
+    technologies: ['High Converting', 'Lead Generation', 'Analytics', 'Mobile Optimized'],
+    keyword: 'jasa pembuatan landing page sukoharjo'
   },
   {
     icon: <Code2 className="w-10 h-10" />,
-    title: 'Website Bisnis Sukoharjo',
-    description: 'Pembuatan website bisnis profesional di Sukoharjo dengan teknologi modern Next.js dan Laravel untuk performa optimal.',
-    technologies: ['Next.js', 'Laravel', 'React', 'TypeScript'],
-    keyword: 'website bisnis sukoharjo'
+    title: 'Jasa Pembuatan Website UMKM Sukoharjo',
+    description: 'Pembuatan website khusus UMKM di Sukoharjo dengan harga murah mulai 200rb. Fitur sesuai kebutuhan bisnis kecil dan menengah.',
+    technologies: ['Harga Murah', 'Fitur UMKM', 'Easy Update', 'Support 24/7'],
+    keyword: 'jasa pembuatan website umkm sukoharjo'
   },
   {
     icon: <Search className="w-10 h-10" />,
     title: 'Website SEO Friendly Sukoharjo',
-    description: 'Jasa pembuatan website SEO friendly di Sukoharjo untuk ranking #1 di Google. Optimasi on-page dan technical SEO terbaik.',
-    technologies: ['On-page SEO', 'Technical SEO', 'Local SEO', 'Google Analytics'],
-    keyword: 'website seo sukoharjo'
+    description: 'Jasa pembuatan website SEO friendly di Sukoharjo untuk ranking #1 di Google. Optimasi local SEO khusus bisnis Sukoharjo dan sekitarnya.',
+    technologies: ['Local SEO', 'Google My Business', 'On-page SEO', 'Analytics'],
+    keyword: 'website seo friendly sukoharjo'
   },
   {
     icon: <Smartphone className="w-10 h-10" />,
-    title: 'Website Responsive Sukoharjo',
-    description: 'Pembuatan website responsive di Sukoharjo yang tampil sempurna di semua device: desktop, tablet, dan mobile.',
-    technologies: ['Mobile First', 'Cross Browser', 'Touch Friendly', 'Fast Loading'],
-    keyword: 'website responsive sukoharjo'
+    title: 'Web Developer Sukoharjo Terpercaya',
+    description: 'Web developer profesional di Sukoharjo dengan pengalaman 5+ tahun. Spesialis Next.js, Laravel, WordPress untuk semua jenis website bisnis.',
+    technologies: ['Next.js Expert', 'Laravel Pro', 'WordPress', '5+ Tahun'],
+    keyword: 'web developer sukoharjo'
   }
 ];
 
@@ -59,9 +59,9 @@ export default function ServicesSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Jasa Pembuatan Website di Sukoharjo</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Jasa Pembuatan Website Sukoharjo Murah & Berkualitas</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Layanan pembuatan website profesional di Sukoharjo dengan harga terjangkau. Spesialis website company profile, toko online, dan landing page untuk bisnis lokal Sukoharjo.
+            Layanan pembuatan website profesional di Sukoharjo dengan harga mulai 200rb. Spesialis website company profile, toko online, landing page, dan website UMKM. Melayani Sukoharjo, Solo, Kartasura dengan garansi kepuasan.
           </p>
         </motion.div>
 

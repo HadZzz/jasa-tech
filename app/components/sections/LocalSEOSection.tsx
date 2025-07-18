@@ -22,12 +22,12 @@ const localInfo = {
 };
 
 const services = [
-  'Jasa Pembuatan Website Company Profile Sukoharjo',
-  'Jasa Pembuatan Website Toko Online Sukoharjo', 
-  'Jasa Pembuatan Landing Page Sukoharjo',
-  'Jasa Pembuatan Website Bisnis Sukoharjo',
-  'Web Developer Sukoharjo',
-  'Website Murah Sukoharjo'
+  'Jasa Pembuatan Website Company Profile Sukoharjo - Mulai 200rb',
+  'Jasa Pembuatan Website Toko Online Sukoharjo - E-commerce Lengkap', 
+  'Jasa Pembuatan Landing Page Sukoharjo - High Converting',
+  'Jasa Pembuatan Website UMKM Sukoharjo - Paket Khusus',
+  'Web Developer Sukoharjo Terpercaya - 5+ Tahun Pengalaman',
+  'Website Murah Sukoharjo - Harga Terjangkau Kualitas Premium'
 ];
 
 export default function LocalSEOSection() {
@@ -42,11 +42,11 @@ export default function LocalSEOSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Jasa Pembuatan Website Terpercaya di Sukoharjo
+            Jasa Pembuatan Website Sukoharjo Murah & Terpercaya
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Melayani seluruh wilayah Sukoharjo dan sekitarnya dengan layanan pembuatan website profesional. 
-            Konsultasi gratis dan harga terjangkau untuk semua jenis website.
+            Melayani seluruh wilayah Sukoharjo, Solo, Kartasura dengan layanan pembuatan website profesional mulai 200rb. 
+            Spesialis website UMKM, company profile, toko online. Gratis konsultasi & garansi revisi!
           </p>
         </motion.div>
 

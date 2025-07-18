@@ -1,0 +1,10 @@
+# Vercel ignore file
+.opencode/
+testing-gemini.ts
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+Thumbs.db

@@ -3,17 +3,25 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Performance optimization for Core Web Vitals
   experimental: {
-    // Disable optimizeCss temporarily to fix Vercel build
-    // optimizeCss: true,
+    // Optimize package imports for better bundle size
     optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
   
   // Image optimization for better LCP
   images: {
-    domains: [
-      'cdni.iconscout.com',
-      'images.unsplash.com',
-      'cdn.worldvectorlogo.com'
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdni.iconscout.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.worldvectorlogo.com',
+      },
     ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year

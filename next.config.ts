@@ -3,7 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Performance optimization for Core Web Vitals
   experimental: {
-    optimizeCss: true,
+    // Disable optimizeCss temporarily to fix Vercel build
+    // optimizeCss: true,
     optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
   

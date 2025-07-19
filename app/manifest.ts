@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Jawatechno - Jasa Pembuatan Website Sukoharjo',
     short_name: 'Jawatechno',
-    description: 'Jasa pembuatan website profesional di Sukoharjo dengan harga terjangkau mulai 2 juta',
+    description: 'Jasa pembuatan website profesional di Sukoharjo dengan harga terjangkau mulai 200rb',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

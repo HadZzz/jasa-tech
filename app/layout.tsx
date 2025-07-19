@@ -9,7 +9,7 @@ import WhatsAppButton from "./components/WhatsAppButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Sukoharjo Murah & Terpercaya | Mulai 200rb",
+  title: "Jawatechno - Jasa Pembuatan Website Sukoharjo Murah & Terpercaya | Mulai 200rb",
   description:
     "Jasa pembuatan website di Sukoharjo terpercaya dengan harga mulai 200rb. Spesialis website company profile, toko online & landing page. Gratis konsultasi, SEO friendly, garansi revisi. Hubungi sekarang!",
   keywords: [
@@ -65,8 +65,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+    shortcut: ['/favicon.ico'],
+  },
   openGraph: {
-    title: "Jasa Pembuatan Website Sukoharjo Murah & Terpercaya | Mulai 200rb",
+    title: "Jawatechno - Jasa Pembuatan Website Sukoharjo Murah & Terpercaya | Mulai 200rb",
     description:
       "Jasa pembuatan website di Sukoharjo terpercaya dengan harga mulai 200rb. Spesialis website company profile, toko online & landing page. Gratis konsultasi, SEO friendly, garansi revisi.",
     url: "https://jawatechno.com",
@@ -75,19 +88,19 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Jasa Pembuatan Website Sukoharjo Murah - Jawatechno",
+        alt: "Jawatechno - Jasa Pembuatan Website Sukoharjo Murah & Terpercaya",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jasa Pembuatan Website Sukoharjo Murah & Terpercaya | Mulai 200rb",
+    title: "Jawatechno - Jasa Pembuatan Website Sukoharjo Murah & Terpercaya | Mulai 200rb",
     description:
       "Jasa pembuatan website di Sukoharjo terpercaya dengan harga mulai 200rb. Spesialis website company profile, toko online & landing page. Gratis konsultasi, SEO friendly!",
-    images: ["/og-image.jpg"],
+    images: ["/logo.png"],
   },
   verification: {
     google: "google4e3a1c0d34f5d8a4",
@@ -110,11 +123,17 @@ const jsonLd = {
   "@type": ["ProfessionalService", "LocalBusiness", "WebDesignCompany"],
   name: "Jawatechno - Jasa Pembuatan Website Sukoharjo",
   alternateName: "Jasa Website Sukoharjo Terpercaya",
+  brand: {
+    "@type": "Brand",
+    name: "Jawatechno",
+    logo: "https://jawatechno.com/logo.png"
+  },
+  logo: "https://jawatechno.com/logo.png",
   description:
     "Jasa pembuatan website profesional di Sukoharjo dengan harga mulai 200rb. Spesialis website company profile, toko online, landing page, dan website bisnis. Melayani Sukoharjo, Solo, Kartasura dan sekitarnya.",
   image: [
-    "https://jawatechno.com/og-image.jpg",
-    "https://jawatechno.com/logo-jawatechno.png"
+    "https://jawatechno.com/logo.png",
+    "https://jawatechno.com/favicon-512x512.png"
   ],
   "@id": "https://jawatechno.com",
   url: "https://jawatechno.com",
@@ -365,6 +384,38 @@ const faqSchema = {
   ]
 };
 
+// Organization Schema for brand recognition
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Jawatechno",
+  alternateName: "Jasa Website Sukoharjo",
+  url: "https://jawatechno.com",
+  logo: "https://jawatechno.com/logo.png",
+  image: "https://jawatechno.com/logo.png",
+  description: "Jasa pembuatan website profesional di Sukoharjo dengan harga terjangkau mulai 200rb",
+  telephone: "+6285876120167",
+  email: "hadzipamuji5@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Karangasem, Bulu",
+    addressLocality: "Sukoharjo",
+    postalCode: "57512",
+    addressRegion: "Jawa Tengah",
+    addressCountry: "ID"
+  },
+  sameAs: [
+    "https://facebook.com/jawatechno",
+    "https://instagram.com/jawatechno",
+    "https://wa.me/6285876120167"
+  ],
+  founder: {
+    "@type": "Person",
+    name: "Hadzi Pamuji",
+    jobTitle: "Web Developer & Digital Marketing Specialist"
+  }
+};
+
 // Breadcrumb Schema for better navigation SEO
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -427,6 +478,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5"
@@ -438,6 +493,13 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-192x192.png" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/favicon-512x512.png" type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider

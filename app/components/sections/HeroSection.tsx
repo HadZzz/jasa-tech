@@ -32,20 +32,29 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80 mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80 mb-4"
             >
-              Jasa Pembuatan Website Sukoharjo Murah & Terpercaya
+              Jasa Pembuatan Website di Sukoharjo Terpercaya
             </motion.h1>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mb-6"
+            >
+              Web Developer Sukoharjo Profesional | Jasa Website Sukoharjo Murah Mulai 200rb
+            </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-muted-foreground mb-8"
             >
-              <strong>Jawatechno</strong> adalah jasa pembuatan website di Sukoharjo
-              terpercaya dengan harga mulai <strong>200rb</strong>. Spesialis website company profile, 
-              toko online, dan landing page untuk bisnis UMKM. Melayani Sukoharjo, Solo, Kartasura 
-              dengan teknologi modern Next.js. <strong>Gratis konsultasi & garansi revisi!</strong>
+              <strong>Jawatechno</strong> adalah <strong>jasa pembuatan website sukoharjo</strong> 
+              terpercaya dengan harga mulai <strong>200rb</strong>. Web developer Sukoharjo profesional 
+              spesialis website company profile, toko online, dan landing page untuk bisnis UMKM. 
+              Jasa website Sukoharjo melayani Sukoharjo, Solo, Kartasura dengan teknologi modern Next.js. 
+              <strong>Gratis konsultasi & garansi revisi!</strong>
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
